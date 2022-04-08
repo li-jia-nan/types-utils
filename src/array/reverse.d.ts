@@ -1,15 +1,6 @@
 import { If } from '../control-flow';
 import { IsReadonlyArray, IsTuple } from '../basic';
 
-/**
- * Reverses an array.
- * @example
- * ```ts
- * // Expect: [3, 2, 1]
- * type Foo = Reverse<[1, 2, 3]>
- * ```
- */
-// notice: distributed condition type
 export type Reverse<T extends readonly unknown[]> = T extends T
   ? If<
       IsTuple<T>,
@@ -25,3 +16,5 @@ export type Reverse<T extends readonly unknown[]> = T extends T
       T
     >
   : never;
+
+// type Foo = Reverse<[1, 2, 3]>;

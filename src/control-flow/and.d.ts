@@ -2,17 +2,6 @@ import { ArrayItem, IsEmptyTypeArray, IsTruthy, IsTuple } from '../basic';
 import { If } from './if';
 import { Or } from './or';
 
-/**
- * And operator for types.
- * @example
- * ```ts
- *  // Expect: false
- *  type Foo = And<[1, 2, false]>
- *  // Expect: true
- *  type Bar = And<[true, 1, 'str']>
- * ```
- */
-// notice: distributed condition type
 export type And<A extends readonly unknown[]> = If<
   IsTuple<A>,
   A extends readonly [infer Current, ...infer Rest]
@@ -30,3 +19,7 @@ export type And<A extends readonly unknown[]> = If<
     : never,
   IsTruthy<ArrayItem<A>>
 >;
+
+// type Foo = And<[1, 2, false]>;
+
+// type Bar = And<[true, 1, 'str']>;

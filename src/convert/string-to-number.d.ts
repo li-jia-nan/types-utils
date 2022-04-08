@@ -7,12 +7,6 @@ type InternalStringToNumber<
     : InternalStringToNumber<S, [...T, '']>
   : never;
 
-/**
- * Convert string (`${number}`) to number
- * @example
- * ```ts
- * // Expect: 1
- * type Foo = StringToNumber<'1'>
- * ```
- */
+// type sss = InternalStringToNumber<'20'>;
+
 export type StringToNumber<S extends string> = InternalStringToNumber<S>;

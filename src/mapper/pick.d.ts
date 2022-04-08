@@ -2,7 +2,7 @@ import { Fill } from '../array';
 import { IsEmptyTypeArray, IsObject } from '../basic';
 import { OtherToString } from '../convert';
 import { StrictExclude } from '../union';
-import { ConditionalKeys, DeepKeys, Keys } from './key';
+import { DeepKeys, Keys } from './key';
 import { StrictOmit } from './omit';
 
 /**
@@ -84,27 +84,6 @@ export type DeepPick<T, K extends DeepKeys<T>> = {
             }
       >
 */
-
-/**
- * Pick by Condition (value).
- * @example
- * ```ts
- *  interface Props {
-      a?: number
-      b: string
-      c: boolean
-    }
- *
- *  // Expect: { a?: number, c: boolean }
- *  type NewProps = ConditionalPick<Props, number | boolean>
- *  // Set exact true, expect: { c: boolean }
- *  type NewProps = ConditionalPick<Props, number | boolean>
- * ```
- */
-export type ConditionalPick<T, Condition, Exact extends boolean = false> = Pick<
-  T,
-  ConditionalKeys<T, Condition, Exact>
->;
 
 // export type RemoveIndexSignature<T> = {
 //   [K in keyof T as K extends Keys<T>

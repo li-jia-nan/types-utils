@@ -6,4 +6,3 @@ export * from './optional';
 export * from './required';
 export * from './value';
 export * from './key';
-export * from './merge';
