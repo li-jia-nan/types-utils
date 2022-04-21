@@ -1,5 +1,5 @@
 {
-  "name": "types-utils",
+  "name": "lijianan-types-utils",
   "version": "1.0.0",
   "description": "一个 typescript 类型工具包",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/li-jia-nan/types-utils.git"
   },
-  "author": "",
+  "author": "lijianan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/li-jia-nan/types-utils/issues"
